@@ -1,0 +1,41 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: storage-support-can-read-storage
+  namespace: tienda
+subjects:
+  - kind: Group
+    name: storage-support
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: storage-reader
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: app-support-can-read-apps
+  namespace: tienda
+subjects:
+  - kind: Group
+    name: app-support
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: app-reader
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: app-admin-can-operate-apps
+  namespace: tienda
+subjects:
+  - kind: Group
+    name: app-admin
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: app-operator
+  apiGroup: rbac.authorization.k8s.io

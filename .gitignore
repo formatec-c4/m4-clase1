@@ -1,0 +1,9 @@
+.DS_Store
+.lab/
+.lab.cleaned.*/
+__pycache__/
+*.pyc
+*.log
+*.pid
+.env
+*.secret
